@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
     buildTypes {
         release {
@@ -25,4 +26,31 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // dagger 2 的配置
+    implementation 'com.google.dagger:dagger:2.4'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.4'
+    // 添加java 注解库
+    implementation 'org.glassfish:javax.annotation:10.0-b28'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+
+    compile 'com.jakewharton:butterknife:8.4.0'
+    implementation 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    implementation 'de.greenrobot:eventbus:3.0.0-beta1'
+
+    implementation 'com.facebook.fresco:fresco:0.11.0'
+
+    implementation 'com.hjm:BottomTabBar:1.1.1'
+
+    implementation 'com.github.bumptech.glide:glide:3.5.2'
+
+    implementation 'com.jcodecraeer:xrecyclerview:1.5.8'
+
+    implementation 'com.youth.banner:banner:1.4.9'
 }
